@@ -1,0 +1,38 @@
+<div class="text-center">
+  <h2>{{title}}</h2>
+  <p>{{{body}}}</p>
+  <p>Created by {{user.name}} on {{format_date created_at}}</p>
+  <p>
+  </p>
+    {{#if Comments.length}}
+  <div class="col-md-6 project-list">
+    <h3>Comments:</h3>
+
+    {{#each Comments as |comment|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{comment.user.id}}">{{comment.user.name}}</a></h4>
+      </div>
+      <div class= col-md-8>
+        {{comment.content}}
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+  <p>
+    <form id= 'comment-form' style= "display:block">
+    <div class="form-group">
+      <label for="comment-content">New Comment</label>
+      <textarea class="form-control" id="commentBody" rows="2"></textarea>
+    </div>
+    <button type="submit" id="comment-submit" class="btn btn-primary" data-id="{{{id}}}">Submit</button>
+    </form>
+    <button id="comment" class="btn btn-primary" style= "display:none">Add a Comment</button>
+  </p>
+</div>
+
+<script src= "/js/newComment.js"></script>
