@@ -1,10 +1,10 @@
   {{#if allPosts.length}}
-  <div class="col-md-6 project-list">
+  <div class="col-md-12 project-list">
     <h3>Recent Posts:</h3>
 
     {{#each allPosts as |post|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">
         <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
       </div>
     </div>

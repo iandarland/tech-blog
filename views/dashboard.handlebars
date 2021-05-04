@@ -1,29 +1,31 @@
-<div class="row">
-  <div class="col-auto">
+<div class= "col-12">
+  <div class="col-12">
     <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
 
-<div class="row mt-4">
+<div class="row">
   {{#if Posts.length}}
-  <div class="col-md-6 project-list">
+  <div class="col-md-12">
     <h3>Your Posts:</h3>
 
     {{#each Posts as |post|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">
         <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
       </div>
-      <div class="col-md-4">
+      <div class="card-body">
         <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
   </div>
   {{/if}}
+<div class= "d-flex align-items-center col-12">
     <p>
     <a href= "/create"><button class="btn btn-primary">Create a Post</button></a>
   </p>
+</div>
 </div>
 
 <script src="./js/dashboard.js"></script>
