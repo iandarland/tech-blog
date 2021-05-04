@@ -10,7 +10,7 @@
     <h3>Your Posts:</h3>
 
     {{#each Posts as |post|}}
-    <div class="card">
+    <div class="card post-list">
       <div class="card-header">
         <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
       </div>
@@ -19,7 +19,6 @@
       </div>
     </div>
     {{/each}}
-  </div>
   {{/if}}
 <div class= "d-flex align-items-center col-12">
     <p>
