@@ -6,11 +6,11 @@
 
 <div class="row">
   {{#if Posts.length}}
-  <div class="col-md-12">
+  <div class="col-md-12 card post-list">
     <h3>Your Posts:</h3>
 
     {{#each Posts as |post|}}
-    <div class="card post-list">
+    <div>
       <div class="card-header">
         <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
       </div>
