@@ -33,7 +33,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
                 },
                 {
                     model: Comment,
-                    attributes: ['content', 'user_id'],
+                    attributes: ['content', 'user_id', 'created_at'],
                     include: [
                         {
                             model: User,
@@ -66,7 +66,7 @@ router.get('/dashboard', withAuth, async (req,res) => {
 
         res.render('dashboard', {
             ...user,
-            logged_in: true
+            logged_in: req.session.logged_in
         });
     }catch (err) {
         res.status(500).json(err);
@@ -82,7 +82,7 @@ router.get('/create', withAuth, async (req, res) => {
 
         res.render('create', {
             ...user,
-            logged_in: true
+            logged_in: req.session.logged_in
         });
     } catch(err) {
         res.status(500).json(err);
